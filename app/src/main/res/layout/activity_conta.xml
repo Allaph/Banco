@@ -18,68 +18,61 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="13dp"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
 
     <TextView
         android:text="Saque"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ValorDepositoId"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="79dp"
         android:id="@+id/textView3"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:ems="10"
-        android:layout_below="@+id/ValorDepositoId"
-        android:layout_alignStart="@+id/ValorDepositoId"
-        android:layout_marginTop="35dp"
-        android:id="@+id/SaqueId"
-        tools:ignore="LabelFor" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_marginTop="135dp"
-        android:id="@+id/SaldoId"
-        android:layout_below="@+id/SaqueId"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        tools:ignore="LabelFor" />
+        android:id="@+id/DepositoId" />
 
-    <TextView
-        android:text="Saldo Bancario"
+
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView4"
-        android:layout_alignBaseline="@+id/SaldoId"
-        android:layout_alignBottom="@+id/SaldoId"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="17dp"
-        tools:ignore="HardcodedText" />
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/SaqueId"
+        tools:ignore="LabelFor"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:text="Extrato em tela"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ExtratoId"
-        android:layout_marginBottom="55dp"
-        android:layout_alignBottom="@+id/textView4"
-        android:layout_centerHorizontal="true"
-        tools:ignore="HardcodedText" />
+        android:layout_marginBottom="73dp"
+        tools:ignore="HardcodedText"
+        android:layout_above="@+id/SaldoId"
+        android:layout_centerHorizontal="true" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/ValorDepositoId"
-        tools:ignore="LabelFor,RelativeOverlap"
-        android:layout_alignParentTop="true"
+        android:layout_marginBottom="93dp"
+        android:id="@+id/SaldoId"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
+
+
 </RelativeLayout>

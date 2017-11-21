@@ -2,32 +2,42 @@ package banco.cursoandroid.com.banco;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class Conta extends AppCompatActivity {
-
-    private EditText deposito;
-    private EditText saque;
-    private Button extrato;
-    private EditText saldo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conta);
 
-        deposito = (EditText) findViewById(R.id.ValorDepositoId);
-        saque = (EditText) findViewById(R.id.SaqueId);
-        extrato = (Button) findViewById(R.id.ExtratoId);
-        saldo = (EditText) findViewById(R.id.SaldoId);
+        final EditText deposito = (EditText) findViewById(R.id.DepositoId);
+        final EditText saque = (EditText) findViewById(R.id.SaqueId);
+        Button extrato = (Button) findViewById(R.id.ExtratoId);
+        final TextView saldo = (TextView) findViewById(R.id.SaldoId);
+
+        extrato.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String saqueCliente = saque.getText().toString();
+                String depositoCliente = deposito.getText().toString();
+                String saldoCliente = saldo.getText().toString();
+
+                float ValorSaqueCliente = Float.parseFloat(saqueCliente);
+                float ValorDepositoCliente = Float.parseFloat(depositoCliente);
+
+                float ValorExtratoFinal = ValorDepositoCliente - ValorSaqueCliente;
+
+                saldo.setText("Saldo disponível: " + ValorExtratoFinal +"");
 
 
-        int valorDeposito = Integer.parseInt(String.valueOf(deposito));
-        int valorSaque = Integer.parseInt(String.valueOf(saque));
-        int valorFinal = valorDeposito - valorSaque;
+            }
+        });
 
-        saldo.setText("Saldo disponível: " + valorFinal + ",00" );
+
 
     }
 }
